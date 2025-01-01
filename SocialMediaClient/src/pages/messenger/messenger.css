@@ -1,29 +1,87 @@
-.messenger{
-    display: flex;
-    height: cal(100vh - 50px);
+.messenger {
+  display: flex;
+  height: calc(100vh - 50px);
 }
 
-.chatMenu{
-    flex: 3.5;
+.chatMenu {
+  flex: 3.5;
 }
 
-.chatMenuInput{
-    width: 90%;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #f0f0f0;
+.chatMenuInput {
+  width: 90%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
 }
-.chatBox{
-    flex: 5.5;
-}
-
-.chatOnline{
-    flex: 3;
+.chatBox {
+  flex: 5.5;
 }
 
-.chatMenuWrapper, .chatBoxWrapper, .chatOnlineWrapper{
-    padding: 10px;
-    border-right: 1px solid #f0f0f0;
-    height: 100%;
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.chatBoxTop {
+  height: calc(
+    100% - 100px
+  ); /* Subtract height of chatBoxBottom for proper scrolling */
+  overflow-y: scroll;
+  scrollbar-width: thin; /* Optional: customize scrollbar width */
+  scrollbar-color: #ccc transparent; /* Optional: customize scrollbar color */
+  padding-right: 10px;
+}
+
+.chatBoxBottom {
+  height: 100px; /* Define height for the input and button */
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatMessageInput {
+  width: 70%; /* Keep width compact */
+  height: 40px; /* Reduced height for a sleeker appearance */
+  padding: 8px; /* Adjust padding to match the reduced height */
+  border: 1px solid #ccc; /* Add a subtle border for visibility */
+  border-radius: 10px; /* Slightly round corners */
+  resize: none; /* Disable resizing */
+  font-size: 14px; /* Ensure text is readable */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  outline: none; /* Remove default browser outline */
+}
+
+.chatMessageInput:hover {
+  border-color: #1877f2; /* Change border color on hover to match the button */
+  background-color: #f5f7fa;
+}
+
+.chatSubmitButton {
+  width: 80px; /* Increase width slightly for better balance */
+  height: 40px; /* Adjust button size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold; /* Make text bold */
+  font-size: 14px; /* Adjust font size */
+  transition: background-color 0.3s ease; /* Add hover effect transition */
+}
+
+.chatSubmitButton:hover {
+  background-color: #145dbf; /* Darker blue on hover */
+}
+.chatOnline {
+  flex: 3;
+}
+
+.chatMenuWrapper,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  padding: 10px;
+  border-right: 1px solid #f0f0f0;
+  height: 100%;
+}
