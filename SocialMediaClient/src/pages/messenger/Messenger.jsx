@@ -7,14 +7,20 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { io } from "socket.io-client";
 
 const Messenger = () => {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [socket, setSocket] = useState(null);
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
+
+  useEffect(() => {
+    setSocket(io("ws://localhost:8900"));
+  }, []);
 
   useEffect(() => {
     const getConversations = async () => {
@@ -47,18 +53,18 @@ const Messenger = () => {
       text: newMessage,
       conversationId: currentChat._id,
     };
-    try{
+    try {
       const res = await axios.post("/messages", message);
       setMessages([...messages, res.data]);
       setNewMessage("");
-    } catch(err){
+    } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(()=>{
-    scrollRef.current?.scrollIntoView({behaviour: "smooth"})
-  }, [messages])
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behaviour: "smooth" });
+  }, [messages]);
 
   return (
     <>
