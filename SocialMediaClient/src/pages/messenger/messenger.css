@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .chatBoxTop {
@@ -85,3 +86,35 @@
   border-right: 1px solid #f0f0f0;
   height: 100%;
 }
+
+.noConversationText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: #8c8c8c; /* Softer gray */
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  font-weight: 300;
+  letter-spacing: 1px;
+  background: none; /* Remove box */
+  padding: 0; /* Remove padding */
+  box-shadow: none; /* Remove box shadow */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Optional: Add a fade-in animation for a smooth effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
