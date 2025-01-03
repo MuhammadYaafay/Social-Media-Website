@@ -1,14 +1,49 @@
+/* Sidebar Friend container */
 .sidebarFriend {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-}
-
-.sidebarFriendImg {
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .sidebarFriend:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  /* Profile image styling */
+  .sidebarFriendImg {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
-    margin-left: 0;
-}
+  }
+  
+  /* Username styling */
+  .sidebarFriendName {
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebarFriendName:hover {
+    color: #0073e6; /* Change color on hover */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .sidebarFriend {
+      font-size: 14px; /* Smaller text on mobile */
+    }
+  
+    .sidebarFriendImg {
+      width: 28px;
+      height: 28px; /* Smaller profile image on mobile */
+    }
+  }
+  

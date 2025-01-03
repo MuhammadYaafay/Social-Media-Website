@@ -1,41 +1,96 @@
-.message{
+/* Main Message Container */
+.message {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-}
-
-.messageTop{
+    transition: all 0.3s ease;
+  }
+  
+  .messageTop {
     display: flex;
     align-items: center;
-}
-
-.messageImg{
-    width: 32px;
-    height: 32px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Profile Image Styling */
+  .messageImg {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 10px;
-    margin-right: 10px;
-}
-
-.messageText{
-    padding:10px;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .messageImg:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Message Text Styling */
+  .messageText {
+    padding: 12px;
     border-radius: 20px;
-    background-color: #1877f2;
+    background-color: #1775ee;
     color: white;
     max-width: 300px;
-}
-
-.messageBottom{
+    word-wrap: break-word;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .messageText:hover {
+    background-color: #1d9bf0;
+  }
+  
+  .messageBottom {
     font-size: 12px;
     margin-top: 5px;
-}
-
-.message.own{
+    color: #999;
+  }
+  
+  /* Styling for the "own" message */
+  .message.own {
     align-items: flex-end;
-}
-
-.message.own .messageText{
+  }
+  
+  .message.own .messageText {
     background-color: #dcf8c6;
     color: black;
-}
+  }
+  
+  .message.own .messageText:hover {
+    background-color: #c0e4a1;
+  }
+  
+  /* Animation for the message component */
+  .message.own {
+    animation: slideInRight 0.4s ease-in-out;
+  }
+  
+  .message {
+    animation: slideInLeft 0.4s ease-in-out;
+  }
+  
+  /* Slide in from the left for non-own messages */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide in from the right for own messages */
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  

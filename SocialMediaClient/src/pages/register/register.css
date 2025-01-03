@@ -1,83 +1,122 @@
-.login{
+/* General Styling */
+.register {
     width: 100vw;
     height: 100vh;
     background-color: #f0f2f5;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.loginWrapper{
-    width: 70%;
-    height: 70%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Darker color for better readability */
+  }
+  
+  .registerWrapper {
+    width: 80%;
+    max-width: 1100px;
     display: flex;
-}
-
-.loginLeft, .loginRight{
+    flex-direction: row;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .registerLeft, .registerRight {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-}
-
-.loginLogo{
-    font-size: 50px;
-    font-weight: 800;
+    padding: 30px;
+  }
+  
+  .registerLogo {
+    font-size: 45px;
+    font-weight: 700;
     color: #1775ee;
     margin-bottom: 10px;
-}
-
-.loginDesc{
-    font-size: 20px;
-}
-
-.loginBox{
-    height: 380px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
+  }
+  
+  .registerDesc {
+    font-size: 18px;
+    font-weight: 300;
+    color: #777; /* Lighter color for description */
+    margin-top: 15px;
+  }
+  
+  .registerBox {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-.loginInput{
+    gap: 20px;
+  }
+  
+  .registerInput {
     height: 50px;
     border-radius: 10px;
-    border: 1px solid grey;
-    font-size: 18px;
-    padding-left: 20px;
-}
-
-.loginInput:focus{
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding-left: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .registerInput:focus {
     outline: none;
-}
-
-.loginButton{
+    border-color: #1775ee;
+    box-shadow: 0 0 5px rgba(23, 117, 238, 0.5);
+  }
+  
+  .registerButton, .registerLoginButton {
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-color: #1775ee;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-}
-
-.loginForgot{
-    text-align: center;
-    color: #1775ee;
-}
-
-.loginRegisterButton{
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .registerButton {
+    background-color: #1775ee;
+    color: white;
+  }
+  
+  .registerButton:hover {
+    background-color: #165eab;
+  }
+  
+  .registerLoginButton {
+    background-color: #42b72a;
+    color: white;
+  }
+  
+  .registerLoginButton:hover {
+    background-color: #36a420;
+  }
+  
+  .registerLoginButton {
     width: 50%;
     align-self: center;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    background-color: #42b72a;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
+    margin-top: 15px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .registerWrapper {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .registerLeft, .registerRight {
+      padding: 0;
+    }
+  
+    .registerBox {
+      padding: 20px;
+      width: 90%;
+    }
+  }
+  

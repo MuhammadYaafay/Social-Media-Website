@@ -1,27 +1,27 @@
-.profile{
+.profile {
     display: flex;
-}
-
-.profileRight{
+    margin-top: 20px; /* Adds margin at the top to avoid sticking to the navbar */
+  }
+  
+  .profileRight {
     flex: 9;
-}
-
-.profileBottom{
-    display: flex;
-}
-
-.profileCover{
+    padding: 20px; /* Padding for better spacing */
+  }
+  
+  .profileCover {
     height: 320px;
     position: relative;
-}
-
-.profileCoverImg{
+    background-color: #f9f9f9; /* Adding a light background to make the cover stand out */
+  }
+  
+  .profileCoverImg {
     width: 100%;
     height: 250px;
     object-fit: cover;
-}
-
-.profileUserImg{
+    border-radius: 10px; /* Slightly rounded corners for the cover image */
+  }
+  
+  .profileUserImg {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -32,26 +32,63 @@
     margin: auto;
     top: 150px;
     border: 3px solid white;
-
-}
-
-.profileInfo{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for profile image */
+  }
+  
+  .profileInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 70px;
-}
-
-.profileInfoName{
-    font-size: 24px;
-}
-
-.profileInfoDesc{
+    margin-top: 100px; /* Adjusted to avoid overlap with the cover image */
+  }
+  
+  .profileInfoName {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333; /* Dark text color for contrast */
+    margin-bottom: 5px;
+  }
+  
+  .profileInfoDesc {
+    font-size: 16px;
     font-weight: 300;
-}
-
-.profileRightBottom{
+    color: #777; /* Lighter text for description */
+  }
+  
+  .profileRightBottom {
     display: flex;
     margin-top: 50px;
-}
+    justify-content: space-between; /* Ensures feed and rightbar are spaced out */
+  }
+  
+  @media (max-width: 768px) {
+    .profile {
+      flex-direction: column; /* Stacks the sidebar and main content on smaller screens */
+      margin-top: 60px;
+    }
+  
+    .profileCover {
+      height: 250px; /* Adjust height for mobile */
+    }
+  
+    .profileCoverImg {
+      height: 200px; /* Adjust image height for mobile */
+    }
+  
+    .profileUserImg {
+      width: 120px;
+      height: 120px;
+      top: 130px; /* Adjust position for mobile */
+    }
+  
+    .profileInfoName {
+      font-size: 22px; /* Smaller font size for mobile */
+    }
+  
+    .profileRightBottom {
+      flex-direction: column; /* Stack feed and rightbar on mobile */
+      margin-top: 20px;
+    }
+  }
+  

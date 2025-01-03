@@ -5,17 +5,19 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Topbar() {
-
   const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (
     <div className="topbarContainer">
+      {/* Left Section */}
       <div className="topbarLeft">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo">Social</span>
         </Link>
       </div>
+
+      {/* Center Section */}
       <div className="topbarCenter">
         <div className="searchbar">
           <Search className="searchIcon" />
@@ -25,6 +27,8 @@ export default function Topbar() {
           />
         </div>
       </div>
+
+      {/* Right Section */}
       <div className="topbarRight">
         <div className="topbarLink">
           <span className="link">Home</span>
@@ -45,7 +49,15 @@ export default function Topbar() {
           </div>
         </div>
         <Link to={`/profile/${user.username}`}>
-          <img src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" className="topbarImg" />
+          <img
+            src={
+              user.profilePicture
+                ? PF + user.profilePicture
+                : PF + "person/noAvatar.png"
+            }
+            alt=""
+            className="topbarImg"
+          />
         </Link>
       </div>
     </div>

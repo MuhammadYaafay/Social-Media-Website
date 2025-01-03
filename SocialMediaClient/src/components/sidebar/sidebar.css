@@ -1,57 +1,116 @@
+/* Sidebar Container */
 .sidebar {
     flex: 3;
     height: calc(100vh - 50px);
-    /* Fix calc syntax */
+    background-color: #f4f6f9; /* Lighter background color */
     overflow-y: scroll;
     position: sticky;
     top: 50px;
-
-}
-
-::-webkit-scrollbar {
-    width: 2px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: grey;
-}
-
-.sidebarWrapper {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px;
+    color: #333; /* Darker text for better readability */
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 3px;
+  }
+  
+  .sidebarWrapper {
     padding: 20px;
-}
-
-.sidebarList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Sidebar List Styling */
+  .sidebarList {
     padding: 0;
     margin: 0;
     list-style: none;
-}
-
-.sidebarListItem {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .sidebarListItem {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-}
-
-.sidebarButton {
-    width: 150px;
-    bottom: none;
+    gap: 15px;
     padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sidebarListItem:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Light hover effect */
+    transform: translateX(5px);
+  }
+  
+  .sidebarIcon {
+    font-size: 24px;
+    color: #1877f2; /* Blue color to match the Topbar */
+  }
+  
+  .sidebarListItemText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Darker text for contrast */
+    text-transform: capitalize;
+  }
+  
+  /* Sidebar Button */
+  .sidebarButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    background-color: #1877f2; /* Blue color to match the Topbar */
+    border: none;
     border-radius: 5px;
-    font-weight: 500;
-}
-
-.sidebarHr {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sidebarButton:hover {
+    background-color: #165eab;
+    transform: scale(1.05);
+  }
+  
+  /* Horizontal Line */
+  .sidebarHr {
     margin: 20px 0;
-}
-
-.sidebarFriendList {
+    border: none;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1); /* Light divider */
+  }
+  
+  /* Sidebar Friend List */
+  .sidebarFriendList {
     padding: 0;
     margin: 0;
     list-style: none;
-    margin-left: 0;
-}
-
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Animation Effects */
+  .sidebarFriendList li:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+  }
+  

@@ -1,22 +1,32 @@
 .rightbarFriend {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-}
-
-.rightbarProfileImgContainer {
+    margin-bottom: 10px;
+    background-color: #fff; /* Light background for consistency */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Light shadow for the list item */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .rightbarFriend:hover {
+    background-color: #f0f2f5; /* Change background on hover */
+  }
+  
+  .rightbarProfileImgContainer {
     margin-right: 10px;
     position: relative;
-}
-
-.rightbarProfileImg {
+  }
+  
+  .rightbarProfileImg {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.rightbarOnline {
+    border: 2px solid #ddd; /* Light border around the image */
+  }
+  
+  .rightbarOnline {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -25,8 +35,22 @@
     right: 0;
     position: absolute;
     border: 2px solid white;
-}
-
-.rightbarUsername {
+  }
+  
+  .rightbarUsername {
     font-weight: 500;
-}
+    font-size: 16px;
+    color: #333; /* Dark text color for readability */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .rightbarFriend {
+      margin-bottom: 8px;
+    }
+  
+    .rightbarUsername {
+      font-size: 14px; /* Smaller text size on mobile */
+    }
+  }
+  

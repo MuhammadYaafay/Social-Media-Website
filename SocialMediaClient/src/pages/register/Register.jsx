@@ -28,32 +28,34 @@ export default function Register() {
       }
     }
   };
+
   const handleLoginClick = () => {
     navigate("/login");
   };
+
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">Social</h3>
-          <span className="loginDesc">
+    <div className="register">
+      <div className="registerWrapper">
+        <div className="registerLeft">
+          <h3 className="registerLogo">Social</h3>
+          <span className="registerDesc">
             Connect with friends and the world around you on Social.
           </span>
         </div>
-        <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
+        <div className="registerRight">
+          <form className="registerBox" onSubmit={handleClick}>
             <input
               placeholder="Username"
               required
               ref={username}
-              className="loginInput"
+              className="registerInput"
             />
             <input
               placeholder="Email"
               type="email"
               required
               ref={email}
-              className="loginInput"
+              className="registerInput"
             />
             <input
               placeholder="Password"
@@ -61,20 +63,20 @@ export default function Register() {
               type="password"
               required
               ref={password}
-              className="loginInput"
+              className="registerInput"
             />
             <input
               placeholder="Password Again"
               type="password"
               required
               ref={passwordAgain}
-              className="loginInput"
+              className="registerInput"
             />
-            <button className="loginButton" type="submit">
+            <button className="registerButton" type="submit">
               Sign Up
             </button>
             <button
-              className="loginRegisterButton"
+              className="registerLoginButton"
               type="button"
               onClick={handleLoginClick}
             >
