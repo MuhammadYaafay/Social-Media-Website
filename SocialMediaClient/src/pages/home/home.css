@@ -1,5 +1,48 @@
-.homeContainer{
+/* Home Page Container */
+.homeContainer {
     display: flex;
+    justify-content: space-between;
     width: 100%;
-    
-}
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px; /* Ensure there's space between columns */
+  }
+  
+  /* Make Sidebar and Rightbar responsive */
+  @media (max-width: 768px) {
+    .homeContainer {
+      flex-direction: column;
+      gap: 10px; /* Less gap between components */
+    }
+  
+    /* Sidebar & Rightbar adjustments */
+    .homeContainer .sidebar, 
+    .homeContainer .rightbar {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Feed adjustments for mobile */
+  @media (max-width: 768px) {
+    .homeContainer .feed {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Further adjustments for very small screens */
+  @media (max-width: 480px) {
+    .homeContainer {
+      padding: 10px;
+    }
+  
+    .homeContainer .sidebar,
+    .homeContainer .rightbar {
+      width: 100%; /* Make sidebar and rightbar full width on mobile */
+    }
+  
+    /* Feed layout */
+    .homeContainer .feed {
+      width: 100%;
+    }
+  }
+  
