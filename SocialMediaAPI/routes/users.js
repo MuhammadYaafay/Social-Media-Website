@@ -117,4 +117,14 @@ router.put("/:id/unfollow", async (req, res) => {
   }
 });
 
+// Get online users
+router.get("/online", async (req, res) => {
+  try {
+    const onlineUsers = await User.find({ isOnline: true });
+    res.status(200).json(onlineUsers);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

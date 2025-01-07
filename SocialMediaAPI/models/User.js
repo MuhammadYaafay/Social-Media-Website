@@ -39,6 +39,10 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    isOnline: { // Add this field to track if the user is online
+        type: Boolean,
+        default: false,
+      },
     desc: {
         type: String,
         max: 50,
