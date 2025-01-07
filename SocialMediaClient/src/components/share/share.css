@@ -1,18 +1,21 @@
 .share {
-    width: 100%; 
+    width: 100%;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #fff; /* Add a clean background */
+    overflow: hidden; /* Ensure no overflow for rounded corners */
 }
 
 .shareWrapper {
     padding: 10px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between sections */
 }
 
 .shareTop {
     display: flex;
-    align-items: center; /* Ensure proper alignment of profile image and input */
+    align-items: center;
 }
 
 .shareProfileImg {
@@ -21,22 +24,30 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
+    border: 2px solid #e0e0e0; /* Subtle border for profile image */
 }
 
 .shareInput {
-    width: 80%;
-    border: 1px solid #ddd; /* Adding a subtle border */
-    border-radius: 5px;
-    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Rounded input for modern look */
+    padding: 10px 15px; /* Adjust padding */
+    font-size: 16px; /* Increase font size */
+    background-color: #f9f9f9; /* Light background for input */
+    transition: all 0.3s ease; /* Smooth focus effect */
 }
 
 .shareInput:focus {
     outline: none;
-    border-color: #3b5998; /* Highlight border on focus */
+    border-color: #3b5998; /* Facebook-inspired blue */
+    box-shadow: 0 0 5px rgba(59, 89, 152, 0.3); /* Subtle glow */
+    background-color: #fff; /* Brighten background on focus */
 }
 
 .shareHr {
-    margin: 20px;
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #eee; /* Light divider */
 }
 
 .shareBottom {
@@ -47,51 +58,69 @@
 
 .shareOptions {
     display: flex;
-    margin-left: 20px;
-    flex-grow: 1; /* Allow space for share button to the right */
+    gap: 15px; /* Modern spacing between options */
 }
 
 .shareOption {
     display: flex;
     align-items: center;
-    margin-right: 15px;
+    gap: 5px; /* Modern spacing between icon and text */
+    padding: 5px 10px; /* Add padding for better click area */
+    border-radius: 5px; /* Subtle rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
+}
+
+.shareOption:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover background */
+    transform: translateY(-2px); /* Slight hover lift */
 }
 
 .shareIcon {
     font-size: 18px;
-    margin-right: 3px;
+    color: #555; /* Neutral icon color */
 }
 
 .shareOptionText {
     font-size: 14px;
+    color: #555;
     font-weight: 500;
 }
 
 .shareButton {
     border: none;
-    padding: 10px 20px; /* Adjust padding for a larger button */
-    border-radius: 5px;
-    background-color: green;
-    font-weight: 500;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px; /* Modern rounded button */
+    background-color: #3b5998; /* Facebook-inspired blue */
+    font-size: 14px;
+    font-weight: 600;
     color: white;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .shareButton:hover {
-    background-color: darkgreen;
+    background-color: #2d4373; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight hover lift */
 }
 
 .shareImgContainer {
-    padding: 0 20px 10px 20px;
     position: relative;
+    display: inline-block; /* Keep it inline */
+    border-radius: 10px; /* Rounded image preview */
+    overflow: hidden; /* Ensure no overflow for rounded corners */
 }
 
 .shareImg {
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to the image */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.shareImg:hover {
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 .shareCancelImg {
@@ -99,40 +128,35 @@
     top: 10px;
     right: 10px;
     color: white;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 50%;
-    padding: 3px;
+    padding: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .shareCancelImg:hover {
-    background-color: red; /* Change background color on hover */
+    background-color: rgba(255, 0, 0, 0.7); /* Red on hover */
+    transform: scale(1.2); /* Slight enlarge on hover */
 }
 
-/* Media Query for Responsiveness */
+/* Responsiveness */
 @media (max-width: 768px) {
     .shareWrapper {
-        padding: 5px;
-    }
-
-    .shareTop {
-        flex-direction: column; /* Stack profile image and input */
-        align-items: flex-start;
+        padding: 8px;
     }
 
     .shareInput {
-        width: 100%;
-        margin-top: 10px;
+        font-size: 14px;
     }
 
     .shareOptions {
-        flex-direction: column; /* Stack options vertically */
-        margin-left: 0;
-        margin-top: 10px;
+        gap: 10px;
+        flex-wrap: wrap; /* Wrap options on smaller screens */
     }
 
     .shareButton {
-        width: 100%; /* Make button full-width on smaller screens */
+        width: 100%; /* Full-width button for smaller screens */
         margin-top: 10px;
     }
 }
